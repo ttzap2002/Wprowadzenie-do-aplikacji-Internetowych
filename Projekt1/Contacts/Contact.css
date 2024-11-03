@@ -1,0 +1,71 @@
+/* kontakt.css */
+
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", sans-serif;
+  background-color: #fff3e0;
+}
+
+header,
+nav,
+main,
+footer {
+  padding: 20px;
+}
+
+header {
+  background-color: #15004b;
+  color: #fff;
+}
+
+nav {
+  background-color: #6b37f0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin-right: 15px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+main {
+  min-height: 60vh;
+}
+
+footer {
+  background-color: #581dee;
+  color: #fff;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+form input[type="text"],
+form textarea,
+form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+form input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #581dee;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}

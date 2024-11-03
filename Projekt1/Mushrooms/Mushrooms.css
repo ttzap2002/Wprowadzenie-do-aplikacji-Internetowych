@@ -1,0 +1,179 @@
+/* Globalne style */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f0e1;
+  color: #4a3f31;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Stylowanie nagłówka */
+header {
+  background-color: #f0e9d6;
+  color: white;
+  text-align: center;
+  background-image: url("../Images/headerTło.jpg");
+  padding: 20px;
+  border-bottom: 1px solid #dcd2a3;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+header h1 {
+  font-family: "Amatic SC", cursive;
+  font-size: 100px;
+  margin: 0;
+}
+
+header img {
+  position: absolute;
+  height: 120px; /* Wysokość obrazków */
+  bottom: 0px; /* Umieszczenie obrazów na dole nagłówka */
+}
+
+.lewy-obrazek {
+  left: 40px; /* Odległość od lewej krawędzi */
+}
+
+.prawy-obrazek {
+  right: 40px; /* Odległość od prawej krawędzi */
+}
+
+/* Stylowanie kontenera */
+.container {
+  display: flex;
+  flex: 1;
+}
+
+nav {
+  background-color: #f0e9d6; /* Lekko zmieniony kolor tła */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #dcd2a3;
+  position: relative;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #4a3f31;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 15px;
+  transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 5px;
+}
+
+/* Stylowanie przełącznika motywu */
+nav #theme-toggle {
+  position: absolute;
+  right: 20px;
+  font-size: 24px;
+  text-decoration: none;
+  color: #4a3f31;
+}
+
+#sidebar {
+  flex: 0 0 250px;
+  background-color: #f0e9d6;
+  border-right: 1px solid #dcd2a3;
+  padding: 15px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+#sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+#sidebar li {
+  margin-bottom: 10px;
+}
+
+#sidebar details {
+  margin-bottom: 10px;
+}
+
+#sidebar summary {
+  font-weight: bold;
+  cursor: pointer;
+  color: #4a3f31;
+}
+
+#sidebar a {
+  text-decoration: none;
+  color: #4a3f31;
+  display: block;
+  padding: 5px 0;
+}
+
+#sidebar a:hover {
+  background-color: #e0dbc4;
+  border-radius: 5px;
+}
+
+/* Stylowanie głównej treści */
+#main-content {
+  flex: 1;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.grzyb-container {
+  text-align: center;
+}
+
+.grzyb-container img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.grzyb-container h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 32px;
+  margin: 10px 0;
+  color: #4a3f31;
+}
+
+.grzyb-container p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #4a3f31;
+}
+
+#grzyb-wlasciwosci {
+  margin-top: 20px;
+}
+
+#grzyb-wlasciwosci span {
+  font-size: 24px;
+  margin: 0 5px;
+}
+
+footer {
+  background-color: #f0e9d6;
+  color: #4a3f31;
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid #dcd2a3;
+}

@@ -1,0 +1,28 @@
+{
+  "B": [
+    {
+      "id": "borowik_szlachetny",
+      "nazwa": "Borowik Szlachetny",
+      "obraz": "../Images/Borowik_Szlachetny.jpg",
+      "opis": "Borowik szlachetny, znany też jako prawdziwek (Boletus edulis), jest jednym z najbardziej cenionych grzybów jadalnych. Ma charakterystyczny wygląd, który sprawia, że jest dość łatwy do rozpoznania. ",
+      "wlasciwosci": ["jadalny"]
+    }
+  ],
+
+  "M": [
+    {
+      "id": "muchomor_czerwony",
+      "nazwa": "Muchomor Czerwony",
+      "obraz": "../Images/MuchomorCzerwony.jpg",
+      "opis": "Gatunek grzybów należący do rodziny muchomorowatych. Chociaż uważany powszechnie za trujący, śmierć spowodowana zatruciem po spożyciu A. muscaria jest dość rzadka. Dwukrotne podgotowanie z odlaniem wody osłabia jego toksyczność i rozkłada substancje psychoaktywne grzyba; jest spożywany w niektórych częściach Europy, Azji i Ameryki Północnej.",
+      "wlasciwosci": ["trujacy"]
+    },
+    {
+      "id": "muchomor_sromotnikowy",
+      "nazwa": "Muchomor Sromotnikowy",
+      "obraz": "../Images/Muchomor_Sromotnikowy.jpg",
+      "opis": "gatunek grzybów należący do rodziny muchomorowatych. Gatunek silnie trujący, nawet przy zaawansowanym leczeniu spożycie bardzo często kończy się śmiercią. ",
+      "wlasciwosci": ["trujacy"]
+    }
+  ]
+}

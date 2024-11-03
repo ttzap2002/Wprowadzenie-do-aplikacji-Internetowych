@@ -1,0 +1,189 @@
+/* Importowanie czcionek z Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap"); /* Organiczna czcionka */
+
+/* Globalne style */
+body {
+  margin: 0;
+  font-family: "Lora", serif;
+  background-color: #f5f0e1;
+  background-size: cover;
+  background-attachment: fixed;
+  color: #4a3f31; /* Ciemny brąz zamiast czarnego */
+  cursor: url("../Images/GrzybIkona32.png"), default;
+}
+
+/* Stylowanie nagłówka */
+header {
+  position: relative;
+  background-color: rgba(248, 244, 229, 0.95);
+  background-image: url("../Images/headerTło.jpg");
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+  border-bottom: 1px solid #dcd2a3;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  font-family: "Amatic SC", cursive;
+  font-size: 100px;
+  margin: 0;
+  z-index: 1; /* Aby tekst był na wierzchu */
+}
+
+header img {
+  position: absolute;
+  height: 120px; /* Wysokość obrazków */
+  bottom: 0px; /* Umieszczenie obrazów na dole nagłówka */
+}
+
+.lewy-obrazek {
+  left: 40px; /* Odległość od lewej krawędzi */
+}
+
+.prawy-obrazek {
+  right: 40px; /* Odległość od prawej krawędzi */
+}
+/* Stylowanie nawigacji */
+nav {
+  background-color: #f0e9d6; /* Lekko zmieniony kolor tła */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #dcd2a3;
+  position: relative;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #4a3f31;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 15px;
+  transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 5px;
+}
+
+/* Stylowanie przełącznika motywu */
+nav #theme-toggle {
+  position: absolute;
+  right: 20px;
+  font-size: 24px;
+  text-decoration: none;
+  color: #4a3f31;
+}
+
+/* Stylowanie głównej treści */
+main {
+  background-color: #ffffff;
+  padding: 40px 20px; /* Zredukowano padding */
+  flex: 1;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Większy cień dla bardziej zdefiniowanego wyglądu */
+}
+
+main h2 {
+  font-family: "Playfair Display", serif; /* Elegancka, ale naturalna czcionka */
+  font-size: 36px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  color: #4a3f31;
+}
+
+main p,
+main ul {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #4a3f31;
+}
+
+main ul {
+  list-style: none;
+  padding: 0;
+}
+
+main ul li {
+  position: relative;
+  padding-left: 30px; /* Miejsce na ikonę */
+  margin-bottom: 10px;
+}
+
+/* Dodanie ikon do listy */
+main ul li::before {
+  content: url("../Images/mushroom_icon.svg"); /* Ścieżka do ikony grzyba */
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  /* Alternatywnie, możesz użyć fontów ikonicznych, np. Font Awesome */
+}
+
+/* Stylowanie stopki */
+footer {
+  background-color: #f0e9d6; /* Lekko zmieniony kolor tła */
+  color: #4a3f31;
+  text-align: center;
+  padding: 30px 20px;
+  border-top: 1px solid #dcd2a3;
+}
+
+body.dark-theme {
+  background-color: #1a1a1a;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.7),
+    rgba(26, 26, 26, 0.7)
+  );
+  background-size: cover;
+  background-attachment: fixed;
+  color: #e0e0e0;
+}
+
+body.dark-theme header,
+body.dark-theme nav,
+body.dark-theme footer {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+body.dark-theme nav ul li a,
+body.dark-theme #theme-toggle {
+  color: #e0e0e0;
+}
+
+body.dark-theme nav ul li a:hover {
+  background-color: rgba(50, 50, 50, 0.5);
+}
+
+body.dark-theme main {
+  background-color: #003213;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-theme main h2 {
+  color: #e0e0e0;
+}
+
+body.dark-theme main p,
+body.dark-theme main ul {
+  color: #e0e0e0;
+}
+
+body.dark-theme footer {
+  background-color: rgba(0, 0, 0, 0.8);
+}
