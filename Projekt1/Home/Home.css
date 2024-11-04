@@ -9,11 +9,10 @@ body {
   background-color: #f5f0e1;
   background-size: cover;
   background-attachment: fixed;
-  color: #4a3f31; /* Ciemny brąz zamiast czarnego */
+  color: #4a3f31;
   cursor: url("../Images/GrzybIkona32.png"), default;
 }
 
-/* Stylowanie nagłówka */
 header {
   position: relative;
   background-color: rgba(248, 244, 229, 0.95);
@@ -29,25 +28,25 @@ header h1 {
   font-family: "Amatic SC", cursive;
   font-size: 100px;
   margin: 0;
-  z-index: 1; /* Aby tekst był na wierzchu */
+  z-index: 1;
 }
 
 header img {
   position: absolute;
-  height: 120px; /* Wysokość obrazków */
-  bottom: 0px; /* Umieszczenie obrazów na dole nagłówka */
+  height: 120px;
+  bottom: 0px;
 }
 
 .lewy-obrazek {
-  left: 40px; /* Odległość od lewej krawędzi */
+  left: 40px;
 }
 
 .prawy-obrazek {
-  right: 40px; /* Odległość od prawej krawędzi */
+  right: 40px;
 }
 /* Stylowanie nawigacji */
 nav {
-  background-color: #f0e9d6; /* Lekko zmieniony kolor tła */
+  background-color: #f0e9d6;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -76,7 +75,6 @@ nav ul li a:hover {
   border-radius: 5px;
 }
 
-/* Stylowanie przełącznika motywu */
 nav #theme-toggle {
   position: absolute;
   right: 20px;
@@ -85,18 +83,17 @@ nav #theme-toggle {
   color: #4a3f31;
 }
 
-/* Stylowanie głównej treści */
 main {
   background-color: #ffffff;
-  padding: 40px 20px; /* Zredukowano padding */
+  padding: 40px 20px;
   flex: 1;
   margin: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Większy cień dla bardziej zdefiniowanego wyglądu */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 main h2 {
-  font-family: "Playfair Display", serif; /* Elegancka, ale naturalna czcionka */
+  font-family: "Playfair Display", serif;
   font-size: 36px;
   margin-bottom: 20px;
   padding: 10px;

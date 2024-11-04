@@ -30,26 +30,25 @@ header h1 {
 
 header img {
   position: absolute;
-  height: 120px; /* Wysokość obrazków */
-  bottom: 0px; /* Umieszczenie obrazów na dole nagłówka */
+  height: 120px;
+  bottom: 0px;
 }
 
 .lewy-obrazek {
-  left: 40px; /* Odległość od lewej krawędzi */
+  left: 40px;
 }
 
 .prawy-obrazek {
-  right: 40px; /* Odległość od prawej krawędzi */
+  right: 40px;
 }
 
-/* Stylowanie kontenera */
 .container {
   display: flex;
   flex: 1;
 }
 
 nav {
-  background-color: #f0e9d6; /* Lekko zmieniony kolor tła */
+  background-color: #f0e9d6;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -78,7 +77,6 @@ nav ul li a:hover {
   border-radius: 5px;
 }
 
-/* Stylowanie przełącznika motywu */
 nav #theme-toggle {
   position: absolute;
   right: 20px;
@@ -96,7 +94,7 @@ nav #theme-toggle {
   padding: 15px;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   overflow-y: auto;
-  overflow-x: hidden; /* Zapobiega poziomemu przelewaniu */
+  overflow-x: hidden;
 }
 
 #sidebar a {
@@ -139,7 +137,6 @@ nav #theme-toggle {
   border-radius: 5px;
 }
 
-/* Stylowanie głównej treści */
 #main-content {
   flex: 1;
   padding: 20px;

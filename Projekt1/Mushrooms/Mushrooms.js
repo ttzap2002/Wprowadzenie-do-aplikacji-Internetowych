@@ -1,4 +1,3 @@
-// Ładowanie danych z pliku JSON
 fetch("../MushroomData/Mushroom.json")
   .then((response) => response.json())
   .then((data) => {
@@ -100,7 +99,6 @@ function updateMainContent(grzyb) {
       case "niejadalny":
         emotikona = "🚫";
         break;
-      // Dodaj inne właściwości i emotikony, jeśli potrzebujesz
       default:
         emotikona = "";
     }
