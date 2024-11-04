@@ -88,17 +88,29 @@ nav #theme-toggle {
 }
 
 #sidebar {
-  flex: 0 0 250px;
+  flex: 0 0 200px;
+  max-width: 200px;
+  width: 200px;
   background-color: #f0e9d6;
   border-right: 1px solid #dcd2a3;
   padding: 15px;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   overflow-y: auto;
+  overflow-x: hidden; /* Zapobiega poziomemu przelewaniu */
+}
+
+#sidebar a {
+  display: block;
+  padding: 5px 10px;
+  word-break: break-word;
 }
 
 #sidebar ul {
+  display: flex;
+  flex-direction: column;
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 #sidebar li {

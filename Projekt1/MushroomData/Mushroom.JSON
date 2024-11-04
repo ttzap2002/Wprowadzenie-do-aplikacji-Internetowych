@@ -9,6 +9,16 @@
     }
   ],
 
+  "G": [
+    {
+      "id": "gąska_siarkowa",
+      "nazwa": "Gąska siarkowa",
+      "obraz": "../Images/GąskaSiarkowa.jpg",
+      "opis": "Gatunek grzybów należący do rodziny gąskowatych. Gąska siarkowa występuje w Europie i Ameryce Północnej, została znaleziona również w Chinach. W Europie Środkowej jest szeroko rozpowszechniona, ale występuje w rozproszeniu. W Polsce jest dość pospolita  ",
+      "wlasciwosci": ["niejadalny"]
+    }
+  ],
+
   "M": [
     {
       "id": "muchomor_czerwony",
@@ -23,6 +33,15 @@
       "obraz": "../Images/Muchomor_Sromotnikowy.jpg",
       "opis": "gatunek grzybów należący do rodziny muchomorowatych. Gatunek silnie trujący, nawet przy zaawansowanym leczeniu spożycie bardzo często kończy się śmiercią. ",
       "wlasciwosci": ["trujacy"]
+    }
+  ],
+  "P": [
+    {
+      "id": "pieczrka",
+      "nazwa": "Pieczarka Biaława",
+      "obraz": "../Images/PieczarkaBiaława.jpg",
+      "opis": "Gatunek grzybów z rodziny pieczarkowatych. Występuje w Ameryce Północnej i Południowej, Europie, Azji i Australii[7]. W Polsce jest pospolita. ",
+      "wlasciwosci": ["jadalny"]
     }
   ]
 }
