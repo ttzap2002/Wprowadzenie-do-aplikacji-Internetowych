@@ -224,11 +224,11 @@ nav #theme-toggle {
   }
 }
 
-.grzyb-container {
+.mushrooms-container {
   text-align: center;
 }
 
-.grzyb-container img {
+.mushrooms-container img {
   max-width: 100%;
   height: auto;
   margin-bottom: 20px;
@@ -236,7 +236,7 @@ nav #theme-toggle {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.grzyb-container h2 {
+.mushrooms-container h2 {
   font-family: "Playfair Display", serif;
   font-size: 32px;
   margin: 10px 0;
@@ -245,16 +245,16 @@ nav #theme-toggle {
 
 /* Adjust font sizes for smaller screens */
 @media (max-width: 425px) {
-  .grzyb-container h2 {
+  .mushrooms-container h2 {
     font-size: 28px;
   }
 
-  .grzyb-container p {
+  .mushrooms-container p {
     font-size: 16px;
   }
 }
 
-.grzyb-container p {
+.mushrooms-container p {
   font-size: 18px;
   line-height: 1.6;
   color: #4a3f31;
