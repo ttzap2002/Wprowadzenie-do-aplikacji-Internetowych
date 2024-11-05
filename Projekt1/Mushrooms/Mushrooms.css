@@ -1,6 +1,19 @@
-/* Globalne style */
+/* Importowanie czcionek z Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+html,
 body {
-  font-family: Arial, sans-serif;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: "Lora", serif;
   margin: 0;
   padding: 0;
   background-color: #f5f0e1;
@@ -10,21 +23,22 @@ body {
   min-height: 100vh;
 }
 
-/* Stylowanie nagłówka */
 header {
-  background-color: #f0e9d6;
+  position: relative;
+  background-color: rgba(248, 244, 229, 0.95);
+  background-image: url("../Images/headerTło.jpg");
+  background-size: cover;
+  background-position: center;
   color: white;
   text-align: center;
-  background-image: url("../Images/headerTło.jpg");
-  padding: 20px;
+  padding: 50px 20px;
   border-bottom: 1px solid #dcd2a3;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  position: relative;
 }
 
 header h1 {
   font-family: "Amatic SC", cursive;
-  font-size: 100px;
+  font-size: 8vw; /* Responsive font size */
   margin: 0;
 }
 
@@ -42,9 +56,18 @@ header img {
   right: 40px;
 }
 
-.container {
-  display: flex;
-  flex: 1;
+/* Hide header images on smaller screens */
+@media (max-width: 700px) {
+  header img {
+    display: none;
+  }
+}
+
+header,
+nav,
+main,
+footer {
+  padding: 20px;
 }
 
 nav {
@@ -58,6 +81,9 @@ nav {
 
 nav ul {
   display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
 nav ul li {
@@ -85,6 +111,41 @@ nav #theme-toggle {
   color: #4a3f31;
 }
 
+/* Responsive navigation menu */
+@media (max-width: 425px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav ul li {
+    margin: 5px 0;
+  }
+
+  nav #theme-toggle {
+    position: static;
+    margin-top: 10px;
+  }
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+  flex: 1;
+  width: 100%;
+}
+
+/* Adjust layout for smaller screens */
+@media (max-width: 700px) {
+  .container {
+    flex-direction: column;
+  }
+}
+
 #sidebar {
   flex: 0 0 200px;
   max-width: 200px;
@@ -95,6 +156,17 @@ nav #theme-toggle {
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   overflow-y: auto;
   overflow-x: hidden;
+}
+
+@media (max-width: 700px) {
+  #sidebar {
+    width: 100%;
+    max-width: none;
+    order: 2;
+    box-shadow: none;
+    border-right: none;
+    border-top: 1px solid #dcd2a3;
+  }
 }
 
 #sidebar a {
@@ -145,6 +217,13 @@ nav #theme-toggle {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+@media (max-width: 700px) {
+  #main-content {
+    order: 2;
+    margin-bottom: 20px;
+  }
+}
+
 .grzyb-container {
   text-align: center;
 }
@@ -162,6 +241,17 @@ nav #theme-toggle {
   font-size: 32px;
   margin: 10px 0;
   color: #4a3f31;
+}
+
+/* Adjust font sizes for smaller screens */
+@media (max-width: 425px) {
+  .grzyb-container h2 {
+    font-size: 28px;
+  }
+
+  .grzyb-container p {
+    font-size: 16px;
+  }
 }
 
 .grzyb-container p {
@@ -185,4 +275,44 @@ footer {
   text-align: center;
   padding: 20px;
   border-top: 1px solid #dcd2a3;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Ensure images are responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Dark Theme Styles */
+body.dark-theme {
+  background-color: #1a1a1a;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.7),
+    rgba(26, 26, 26, 0.7)
+  );
+  background-size: cover;
+  background-attachment: fixed;
+  color: #e0e0e0;
+}
+
+/* Additional responsive styling */
+@media (max-width: 425px) {
+  header {
+    padding: 20px 10px;
+  }
+
+  nav ul li {
+    margin: 5px 0;
+  }
+
+  #main-content {
+    padding: 15px;
+  }
+
+  footer {
+    padding: 20px 10px;
+  }
 }
