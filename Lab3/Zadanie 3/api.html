@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ćwiczenie 3</title>
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+      }
+      img {
+        width: 100px;
+      }
+      #filterInput,
+      #sortSelect {
+        margin: 10px;
+        padding: 5px;
+      }
+      #controls {
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="controls">
+      <input
+        type="text"
+        id="filterInput"
+        placeholder="Wpisz frazę do filtrowania"
+      />
+      <select id="sortSelect">
+        <option value="original">Oryginalna kolejność</option>
+        <option value="asc">Rosnąco</option>
+        <option value="desc">Malejąco</option>
+      </select>
+    </div>
+
+    <table id="productsTable">
+      <thead>
+        <tr>
+          <th>Zdjęcie</th>
+          <th>Tytuł</th>
+          <th>Opis</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Tutaj zostaną wstawione dane produktów -->
+      </tbody>
+    </table>
+
+    <script>
+      let originalData = [];
+
+      fetch("https://dummyjson.com/products")
+        .then((response) => response.json())
+        .then((data) => {
+          originalData = data.products.slice(0, 30);
+          displayData(originalData);
+        });
+
+      function displayData(data) {
+        const tbody = document.querySelector("#productsTable tbody");
+        tbody.innerHTML = "";
+
+        data.forEach((product) => {
+          const tr = document.createElement("tr");
+
+          const tdImage = document.createElement("td");
+          const img = document.createElement("img");
+          img.src = product.thumbnail;
+          tdImage.appendChild(img);
+
+          const tdTitle = document.createElement("td");
+          tdTitle.textContent = product.title;
+
+          const tdDescription = document.createElement("td");
+          tdDescription.textContent = product.description;
+
+          tr.appendChild(tdImage);
+          tr.appendChild(tdTitle);
+          tr.appendChild(tdDescription);
+
+          tbody.appendChild(tr);
+        });
+      }
+
+      const filterInput = document.getElementById("filterInput");
+      const sortSelect = document.getElementById("sortSelect");
+
+      filterInput.addEventListener("input", updateData);
+      sortSelect.addEventListener("change", updateData);
+
+      function updateData() {
+        let filteredData = originalData.filter((product) => {
+          const searchText = filterInput.value.toLowerCase();
+          return (
+            product.title.toLowerCase().includes(searchText) ||
+            product.description.toLowerCase().includes(searchText)
+          );
+        });
+
+        const sortOrder = sortSelect.value;
+        if (sortOrder === "asc") {
+          filteredData.sort((a, b) => a.title.localeCompare(b.title));
+        } else if (sortOrder === "desc") {
+          filteredData.sort((a, b) => b.title.localeCompare(a.title));
+        }
+
+        displayData(filteredData);
+      }
+    </script>
+  </body>
+</html>

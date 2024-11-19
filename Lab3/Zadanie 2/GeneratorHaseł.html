@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Generator Haseł</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      input,
+      button {
+        margin: 5px;
+      }
+      button {
+        width: 150px;
+        height: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <input
+      type="number"
+      id="min_length"
+      placeholder="Minimalna długość hasła"
+    />
+    <input
+      type="number"
+      id="max_length"
+      placeholder="Maksymalna długość hasła"
+    />
+    <label>
+      <input type="checkbox" id="include_uppercase" />
+      Czy hasło ma zawierać wielkie litery?
+    </label>
+    <label>
+      <input type="checkbox" id="include_special" />
+      Czy hasło ma zawierać znaki specjalne?
+    </label>
+    <button id="generate_password">Wygeneruj hasło</button>
+
+    <script>
+      const button = document.getElementById("generate_password");
+      button.addEventListener("click", () => {
+        const minLength = parseInt(document.getElementById("min_length").value);
+        const maxLength = parseInt(document.getElementById("max_length").value);
+        const includeUppercase =
+          document.getElementById("include_uppercase").checked;
+        const includeSpecial =
+          document.getElementById("include_special").checked;
+
+        if (isNaN(minLength) || isNaN(maxLength)) {
+          alert(
+            "Proszę wprowadzić poprawne wartości liczbowe dla długości hasła."
+          );
+          return;
+        }
+
+        if (minLength > maxLength) {
+          alert("Minimalna wartość jest większa od maksymalnej.");
+          return;
+        }
+
+        if (minLength < 1) {
+          alert("Minimalna wartość musi być liczbą całkowitą");
+          return;
+        }
+
+        if (minLength < includeUppercase + includeSpecial) {
+          alert(
+            "Minimalna wartość jest nieodpownia, nie uwzdględni znaków wszystkich znaków"
+          );
+          return;
+        }
+
+        const password = generatePassword(
+          minLength,
+          maxLength,
+          includeUppercase,
+          includeSpecial
+        );
+        alert("Wygenerowane hasło: " + password);
+      });
+
+      function generatePassword(
+        minLength,
+        maxLength,
+        includeUppercase,
+        includeSpecial
+      ) {
+        const lowercase = "abcdefghijklmnopqrstuvwxyz";
+        const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        const digits = "0123456789";
+        const specialChars = "!@#$%^&*()_+[]{}|;:',.<>?/`~";
+
+        let allChars = lowercase + digits;
+        let password = "";
+
+        if (includeUppercase) {
+          const randomUpper =
+            uppercase[Math.floor(Math.random() * uppercase.length)];
+          password += randomUpper;
+          allChars += uppercase;
+        }
+        if (includeSpecial) {
+          const randomSpecial =
+            specialChars[Math.floor(Math.random() * specialChars.length)];
+          password += randomSpecial;
+          allChars += specialChars;
+        }
+
+        const requiredLength = password.length;
+        const passwordLength =
+          Math.floor(Math.random() * (maxLength - minLength + 1)) + minLength;
+
+        for (let i = requiredLength; i < passwordLength; i++) {
+          const randomIndex = Math.floor(Math.random() * allChars.length);
+          password += allChars[randomIndex];
+        }
+
+        password = shuffleString(password);
+
+        return password;
+      }
+
+      function shuffleString(str) {
+        const arr = str.split("");
+        for (let i = arr.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+        return arr.join("");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stoper</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+      }
+      #time {
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+      button {
+        margin: 5px;
+        padding: 10px 20px;
+        font-size: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="time">0s</div>
+    <button onclick="startTimer()">Start</button>
+    <button onclick="stopTimer()">Stop</button>
+    <button onclick="resetTimer()">Reset</button>
+
+    <script>
+      let timer;
+      let seconds = 0;
+      let isRunning = false;
+
+      function updateTime() {
+        const minutes = Math.floor(seconds / 60);
+        const remainingSeconds = seconds % 60;
+
+        document.getElementById("time").textContent =
+          minutes > 0
+            ? `${minutes}min ${remainingSeconds}s`
+            : `${remainingSeconds}s`;
+      }
+
+      function startTimer() {
+        if (!isRunning) {
+          isRunning = true;
+          timer = setInterval(() => {
+            seconds++;
+            updateTime();
+          }, 1000);
+        }
+      }
+
+      function stopTimer() {
+        isRunning = false;
+        clearInterval(timer);
+      }
+
+      function resetTimer() {
+        isRunning = false;
+        clearInterval(timer);
+        seconds = 0;
+        updateTime();
+      }
+    </script>
+  </body>
+</html>
