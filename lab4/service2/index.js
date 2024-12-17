@@ -59,14 +59,35 @@ app.delete("/api/orders/:id", authenticateToken, async (req, res) => {
 
 app.patch("/api/orders/:id", authenticateToken, async (req, res) => {
   const { id } = req.params;
-  const orderPatch = req.body;
+  const { bookId, ...orderPatch } = req.body;
+
   const order = await Order.findByPk(id);
 
-  if (order) {
-    await order.update(orderPatch);
+  if (!order) {
+    return res.status(404).send({ error: "Order not found" });
+  }
+
+  if (bookId) {
+    try {
+      const response = await axios.get(
+        `http://localhost:3000/api/books/${bookId}`
+      );
+      if (!response.data) {
+        return res.status(404).send({ error: "Book not found" });
+      }
+    } catch (error) {
+      console.log(error.message);
+      return res
+        .status(500)
+        .send({ error: "Failed to fetch book information" });
+    }
+  }
+
+  try {
+    await order.update({ bookId, ...orderPatch });
     res.send({ message: "Order updated successfully" });
-  } else {
-    res.status(404).send({ error: "Order not found" });
+  } catch (error) {
+    res.status(500).send({ error: "Failed to update order" });
   }
 });
 
